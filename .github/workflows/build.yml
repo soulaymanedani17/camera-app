@@ -17,11 +17,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Buildozer
+      - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y python3-pip git zip unzip openjdk-17-jdk
-          pip install buildozer
+          pip install buildozer cython
 
       - name: Build APK
         run: |
