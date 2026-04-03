@@ -2,7 +2,7 @@ name: Build Android APK
 
 on:
   push:
-   branches: [ main ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -22,6 +22,10 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install buildozer cython
+
+      - name: Accept Android licenses
+        run: |
+          yes | buildozer android update
 
       - name: Build APK
         run: |
